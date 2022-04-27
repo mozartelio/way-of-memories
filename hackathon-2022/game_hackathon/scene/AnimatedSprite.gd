@@ -3,12 +3,15 @@ extends AnimatedSprite
 
 func _on_Player_animate(motion):
 	if motion.y < 0:
-		play("jump")
+		if motion.x > 0:
+			play("jump_right")
+		elif motion.x < 0:
+			play("jump_left")
+		else:
+			play("idle")
 	elif motion.x > 0:
-		play("run")
-		flip_h = false
+		play("run_right")
 	elif motion.x < 0:
-		play("run")
-		flip_h = true
+		play("run_left")
 	else:
 		play("idle")
