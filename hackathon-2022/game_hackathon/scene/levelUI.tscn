@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scene/levelUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/items/heartWhite.png" type="Texture" id=2]
@@ -6,12 +6,8 @@
 [ext_resource path="res://scene/buttons/NewGameButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/exit_button.gd" type="Script" id=5]
 [ext_resource path="res://assets/buttons/Exit Button press.png" type="Texture" id=6]
-[ext_resource path="res://assets/buttons/Controls Button press.png" type="Texture" id=7]
-[ext_resource path="res://assets/buttons/Controls Button.png" type="Texture" id=8]
 [ext_resource path="res://assets/buttons/Exit Button.png" type="Texture" id=9]
-[ext_resource path="res://assets/buttons/new_game_hover.png" type="Texture" id=10]
 [ext_resource path="res://assets/buttons/Exit Button hover.png" type="Texture" id=11]
-[ext_resource path="res://assets/buttons/Controls Button hover.png" type="Texture" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.309804 )
@@ -113,27 +109,9 @@ margin_bottom = 960.0
 rect_scale = Vector2( 0.4, 0.4 )
 alignment = 1
 
-[node name="NewGameButton" parent="UI/menu/Container/Buttons" instance=ExtResource( 4 )]
-margin_left = 977.0
-margin_right = 1577.0
-texture_hover = ExtResource( 10 )
-open_scene = "res://scene/level_1.tscn"
-
-[node name="ControlsButton" parent="UI/menu/Container/Buttons" instance=ExtResource( 4 )]
-margin_left = 977.0
-margin_top = 266.0
-margin_right = 1577.0
-margin_bottom = 466.0
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 7 )
-texture_hover = ExtResource( 12 )
-open_scene = "res://scene/controls.tscn"
-
 [node name="ExitButton" parent="UI/menu/Container/Buttons" instance=ExtResource( 4 )]
 margin_left = 977.0
-margin_top = 532.0
 margin_right = 1577.0
-margin_bottom = 732.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 11 )
