@@ -1,13 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scene/levelUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/items/heartWhite.png" type="Texture" id=2]
-[ext_resource path="res://assets/vinizinho.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/buttons/Controls Button press.png" type="Texture" id=3]
 [ext_resource path="res://scene/buttons/NewGameButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/exit_button.gd" type="Script" id=5]
-[ext_resource path="res://assets/buttons/Exit Button press.png" type="Texture" id=6]
-[ext_resource path="res://assets/buttons/Exit Button.png" type="Texture" id=9]
-[ext_resource path="res://assets/buttons/Exit Button hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/buttons/Controls Button.png" type="Texture" id=5]
+[ext_resource path="res://assets/buttons/Controls Button hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/buttons/Menu Button.png" type="Texture" id=7]
+[ext_resource path="res://assets/buttons/Menu Button press.png" type="Texture" id=8]
+[ext_resource path="res://assets/buttons/Menu Button hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/buttons/Resume Button press.png" type="Texture" id=10]
+[ext_resource path="res://assets/buttons/Resume Button hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/buttons/Resume Button.png" type="Texture" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.309804 )
@@ -21,10 +25,6 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0.705882 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 100
-font_data = ExtResource( 3 )
 
 [node name="levelUI" type="Node2D"]
 script = ExtResource( 1 )
@@ -61,60 +61,51 @@ expand = true
 
 [node name="menu" type="CanvasLayer" parent="UI"]
 
-[node name="Container" type="Container" parent="UI/menu"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="UI/menu/Container"]
+[node name="Panel" type="Panel" parent="UI/menu"]
 margin_left = -54.0
 margin_top = -55.0
 margin_right = 1109.0
 margin_bottom = 671.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="name" type="Control" parent="UI/menu/Container"]
-anchor_left = 0.5
-anchor_top = 0.179
-anchor_right = 0.5
-anchor_bottom = 0.179
-margin_left = -19.0
-margin_top = -7.16
-margin_right = 1003.0
-margin_bottom = 207.84
-rect_pivot_offset = Vector2( -202, -108 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/menu/Container/name"]
+[node name="Buttons" type="VBoxContainer" parent="UI/menu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -307.5
-margin_top = -52.5
-margin_right = 307.5
-margin_bottom = 52.5
-custom_colors/default_color = Color( 0.960784, 0.960784, 0.960784, 1 )
-custom_fonts/normal_font = SubResource( 3 )
-text = "Way Of Memories"
-scroll_active = false
-
-[node name="Buttons" type="VBoxContainer" parent="UI/menu/Container"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -22.0
-margin_top = 165.0
-margin_right = 2533.0
-margin_bottom = 960.0
+margin_left = -514.0
+margin_top = -150.0
+margin_right = 2041.0
+margin_bottom = 645.0
 rect_scale = Vector2( 0.4, 0.4 )
 alignment = 1
 
-[node name="ExitButton" parent="UI/menu/Container/Buttons" instance=ExtResource( 4 )]
+[node name="ResumeButton" parent="UI/menu/Buttons" instance=ExtResource( 4 )]
 margin_left = 977.0
 margin_right = 1577.0
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 6 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 10 )
 texture_hover = ExtResource( 11 )
-script = ExtResource( 5 )
+script = null
 
-[connection signal="button_up" from="UI/menu/Container/Buttons/ExitButton" to="UI/menu/Container/Buttons/ExitButton" method="_on_ExitButton_button_up"]
+[node name="ControlsButton3" parent="UI/menu/Buttons" instance=ExtResource( 4 )]
+margin_left = 977.0
+margin_top = 266.0
+margin_right = 1577.0
+margin_bottom = 466.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+open_scene = "res://scene/controls.tscn"
+
+[node name="MenuButton" parent="UI/menu/Buttons" instance=ExtResource( 4 )]
+margin_left = 977.0
+margin_top = 532.0
+margin_right = 1577.0
+margin_bottom = 732.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+open_scene = "res://scene/menu.tscn"
+
+[connection signal="button_up" from="UI/menu/Buttons/ResumeButton" to="." method="_on_ResumeButton_button_up"]
