@@ -12,20 +12,35 @@
 [ext_resource path="res://assets/Background/08_Forest.png" type="Texture" id=10]
 [ext_resource path="res://assets/Background/07_Forest.png" type="Texture" id=11]
 [ext_resource path="res://assets/Background/06_Forest.png" type="Texture" id=12]
+
+[ext_resource path="res://scene/Tiles/collision_ground.tres" type="TileSet" id=13]
+
 [ext_resource path="res://scene/levelUI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scene/Heart.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=1]
+
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 404, 304 )
+collision_mask = 6
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Clear_ground" type="TileMap" parent="Node2D"]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 786434, 13, 0, 786442, 13, 0, 786449, 13, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 107, -3 )
 current = true
+
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="Player/Camera2D"]
 scale = Vector2( 0.8, 0.8 )
