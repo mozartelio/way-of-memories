@@ -22,3 +22,7 @@ func _process(delta):
 
 func open_scene(path):
 	get_tree().change_scene(path)
+	
+func _unhandled_key_input(event):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
