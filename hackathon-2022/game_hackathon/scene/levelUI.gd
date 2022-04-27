@@ -8,6 +8,12 @@ signal pause
 
 func _ready():
 	hide_menu()
+	var i := 0
+	for button in $UI/menu/Buttons.get_children():
+		if i == 0:
+			i = i + 1
+			continue
+		button.connect("pressed", self, "open_scene", [button.open_scene])
 	
 func update_hearts():
 	$UI/heartsUI/numOfHearts.text = String(charakter_hearth)
@@ -31,15 +37,23 @@ func _on_Player_hearth_signal(number_of_hearth):
 
 
 func show_menu():
-	var children = $UI/menu/Container.get_children()
+	var children = $UI/menu.get_children()
 	
 	for child in children:
 		child.show()
 
 
 func hide_menu():
-	var children = $UI/menu/Container.get_children()
+	var children = $UI/menu.get_children()
 	
 	for child in children:
 		child.hide()
 
+func open_scene(path):
+	get_tree().change_scene(path)
+
+
+func _on_ResumeButton_button_up():
+	is_menu_visible = false
+	hide_menu()
+	emit_signal("pause", false)
