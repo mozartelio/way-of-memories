@@ -8,7 +8,7 @@ export var jump_speed = 50
 export var gravity = 1
 
 var number_of_hearth = 3
-
+var is_game_on_pause = false
 
 signal animate
 signal hearth_signal
@@ -19,12 +19,13 @@ func _ready():
 
 
 func _physics_process(delta):
-	send_num_of_hearth()
-	apply_gravity()
-	move()
-	jump()
-	move_and_slide(motion, UP)
-	animate()
+	if(is_game_on_pause == false):
+		send_num_of_hearth()
+		apply_gravity()
+		move()
+		jump()
+		move_and_slide(motion, UP)
+		animate()
 
 func move():
 	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_right"):
@@ -64,3 +65,11 @@ func animate():
 func send_num_of_hearth():
 	emit_signal("hearth_signal", number_of_hearth)
 
+
+
+func _on_Heart_heart_collect():
+	increase_num_of_hearts()
+
+
+func _on_levelUI_pause(pause):
+	is_game_on_pause = pause
