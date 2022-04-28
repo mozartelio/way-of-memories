@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scene/level_1.gd" type="Script" id=1]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
@@ -47,6 +47,7 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite47.png" type="Texture" id=45]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile3_0_12x.png" type="Texture" id=46]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile8_0_12x.png" type="Texture" id=47]
+[ext_resource path="res://scene/Book.tscn" type="PackedScene" id=48]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile10_0_12x.png" type="Texture" id=49]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile9_0_12x.png" type="Texture" id=50]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile7_0_12x.png" type="Texture" id=51]
@@ -71,13 +72,13 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite10.png" type="Texture" id=70]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite15.png" type="Texture" id=71]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite11.png" type="Texture" id=72]
+[ext_resource path="res://scene/PortalToLevel2.tscn" type="PackedScene" id=73]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 19.895, 553.344 )
-
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 89.182, -166.307 )
@@ -804,6 +805,25 @@ one_way_collision_margin = 16.2
 
 [node name="platform" type="CollisionPolygon2D" parent="map_ground_collision"]
 polygon = PoolVector2Array( -81984.5, -171.576, -82337, -174.631, -83218.9, -176.291, -85259.1, -174.257, -85989.5, -177.686, -86435.3, -178.834, -88523.5, -177.308, -91090.3, -177.741, -91410.7, -175.195, -91548.5, -167.842, -91564.5, -134.575, -84051.1, -136.612, -81808.3, -134.575, -81792.3, -160.034 )
+
+[node name="Container" type="Container" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Book" parent="Container" instance=ExtResource( 48 )]
+position = Vector2( 389, 518 )
+
+[node name="Book2" parent="Container" instance=ExtResource( 48 )]
+position = Vector2( 333, 514 )
+
+[node name="Book3" parent="Container" instance=ExtResource( 48 )]
+position = Vector2( 270, 519 )
+
+[node name="Book4" parent="Container" instance=ExtResource( 48 )]
+position = Vector2( 110, 535 )
+
+[node name="Portal" parent="." instance=ExtResource( 73 )]
+position = Vector2( 1776, 484 )
 
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
 [connection signal="pause" from="levelUI" to="Player" method="_on_levelUI_pause"]

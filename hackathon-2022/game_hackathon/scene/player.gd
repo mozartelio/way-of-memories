@@ -23,8 +23,9 @@ func _physics_process(delta):
 	if(is_game_on_pause == false):
 		send_num_of_hearth()
 		apply_gravity()
-		move()
 		jump()
+		move()
+		
 		move_and_slide(motion, UP)
 		animate()
 		
