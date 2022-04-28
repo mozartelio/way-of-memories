@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scene/level_1.gd" type="Script" id=1]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
@@ -17,15 +17,44 @@
 [ext_resource path="res://scene/levelUI.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scene/checkPoint.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Fences + FG Trees/sprite4.png" type="Texture" id=17]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks1/sprite2.png" type="Texture" id=18]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite41.png" type="Texture" id=19]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite43.png" type="Texture" id=20]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite40.png" type="Texture" id=21]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Fences + FG Trees/sprite5.png" type="Texture" id=22]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite36.png" type="Texture" id=23]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite18.png" type="Texture" id=24]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite27.png" type="Texture" id=25]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite3.png" type="Texture" id=26]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite5.png" type="Texture" id=27]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite25.png" type="Texture" id=28]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite4.png" type="Texture" id=29]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite5.png" type="Texture" id=30]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite24.png" type="Texture" id=31]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite46.png" type="Texture" id=32]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite3.png" type="Texture" id=33]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite16.png" type="Texture" id=34]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite8.png" type="Texture" id=35]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite55.png" type="Texture" id=36]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite9.png" type="Texture" id=37]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite19.png" type="Texture" id=38]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite23.png" type="Texture" id=39]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite25.png" type="Texture" id=40]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite12.png" type="Texture" id=41]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite39.png" type="Texture" id=42]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite13.png" type="Texture" id=43]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite29.png" type="Texture" id=44]
+[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite47.png" type="Texture" id=45]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 404, 304 )
+position = Vector2( 86.422, 515.809 )
+scale = Vector2( 0.823627, 0.823627 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 107, -3 )
+position = Vector2( 89.182, -166.307 )
 current = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player/Camera2D"]
@@ -117,7 +146,7 @@ tile_set = ExtResource( 13 )
 cell_size = Vector2( 4, 4 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 8716417, 10, 0, 8781865, 15, 0, 8781886, 8, 0, 8781907, 14, 0, 8912931, 7, 0, 9109536, 7, 0, 9371677, 3, 0, 9502733, 8, 0, 9568282, 7, 0, 9699377, 16, 0 )
+tile_data = PoolIntArray( 4784096, 16, 0, 5046242, 16, 0, 5439461, 16, 0, 5832680, 16, 0, 6225898, 16, 0, 6553579, 16, 0, 6815725, 16, 0, 7143406, 16, 0, 7471086, 16, 0, 7667695, 16, 0, 8126448, 16, 0, 8388989, 10, 0, 8389035, 9, 0, 8389081, 9, 0, 8454322, 3, 0, 8454325, 16, 0, 8454326, 16, 0, 8454329, 16, 0, 8454331, 16, 0, 8454336, 0, 0, 8454411, 9, 0, 8585200, 16, 0, 8519860, 16, 0, 8520055, 3, 0, 8585403, 16, 0, 8585404, 16, 0, 8585476, 3, 0, 8585477, 7, 0, 8585478, 7, 0, 8585479, 7, 0, 8585480, 7, 0, 8585481, 7, 0, 8585482, 7, 0, 8585483, 7, 0, 8585530, 0, 0, 8650930, 16, 0, 8650941, 16, 0, 8651008, 7, 0, 8651009, 7, 0, 8651010, 7, 0, 8651011, 7, 0, 8651012, 7, 0, 8651125, 3, 0, 8781808, 16, 0, 8716464, 16, 0, 8716478, 16, 0, 8716479, 16, 0, 8716484, 0, 0, 8716542, 7, 0, 8716543, 7, 0, 8781865, 15, 0, 8781886, 8, 0, 8781907, 14, 0, 8781953, 9, 0, 8781999, 16, 0, 8782015, 16, 0, 8782022, 17, 0, 8782024, 17, 0, 8782026, 17, 0, 8782028, 17, 0, 8782030, 17, 0, 8782031, 17, 0, 8782032, 17, 0, 8782033, 17, 0, 8782034, 17, 0, 8782035, 17, 0, 8782036, 17, 0, 8782037, 17, 0, 8782038, 17, 0, 8782039, 17, 0, 8782040, 17, 0, 8782041, 17, 0, 8782042, 17, 0, 8782043, 17, 0, 8782044, 17, 0, 8782045, 17, 0, 8782046, 17, 0, 8782047, 17, 0, 8782048, 17, 0, 8782049, 17, 0, 8782051, 17, 0, 8782052, 17, 0, 8782053, 17, 0, 8782054, 17, 0, 8782055, 17, 0, 8782056, 17, 0, 8782057, 17, 0, 8782058, 17, 0, 8782059, 17, 0, 8782060, 17, 0, 8782061, 17, 0, 8782062, 17, 0, 8782063, 17, 0, 8782064, 17, 0, 8782065, 17, 0, 8782066, 17, 0, 8782067, 17, 0, 8782068, 17, 0, 8782069, 17, 0, 8782070, 17, 0, 8782071, 17, 0, 8782072, 17, 0, 8782073, 17, 0, 8782074, 17, 0, 8782075, 17, 0, 8782076, 17, 0, 8782077, 17, 0, 8782078, 17, 0, 8782134, 15, 0, 8782155, 14, 0, 8847585, 17, 0, 8847586, 17, 0, 8847587, 17, 0, 8847588, 17, 0, 8847589, 17, 0, 8847611, 17, 0, 8847612, 17, 0, 8847613, 17, 0, 8847614, 17, 0, 8847615, 17, 0, 8847616, 17, 0, 8847617, 17, 0, 8978414, 16, 0, 8912931, 7, 0, 8913080, 16, 0, 8913089, 16, 0, 8913147, 7, 0, 8978628, 0, 0, 8978682, 7, 0, 9044164, 0, 0, 9044165, 0, 0, 9044218, 7, 0, 9175021, 16, 0, 9109536, 7, 0, 9109701, 0, 0, 9109753, 7, 0, 9109754, 7, 0, 9175237, 0, 0, 9175238, 0, 0, 9175289, 7, 0, 9240774, 0, 0, 9306310, 0, 0, 9371677, 3, 0, 9371846, 0, 0, 9371897, 3, 0, 9371898, 3, 0, 9437382, 0, 0, 9437433, 3, 0, 9568248, 8, 0, 9502733, 8, 0, 9502918, 0, 0, 9502968, 3, 0, 9568282, 7, 0, 9568454, 0, 0, 9568503, 3, 0, 9633990, 0, 0, 9634039, 3, 0, 9699525, 0, 0, 9699526, 0, 0, 9699527, 0, 0, 9699574, 3, 0, 9699575, 3, 0, 9765061, 0, 0, 9765063, 0, 0, 9765110, 3, 0, 9830597, 0, 0, 9830600, 0, 0, 9830646, 3, 0, 9896132, 0, 0, 9896133, 0, 0, 9896136, 0, 0, 9896182, 3, 0, 9961668, 0, 0, 9961672, 0, 0, 9961718, 3, 0, 10027204, 0, 0, 10027208, 0, 0, 10027254, 3, 0, 10027256, 3, 0, 10092739, 0, 0, 10092740, 0, 0, 10092744, 0, 0, 10092790, 3, 0, 10092791, 3, 0, 10158275, 0, 0, 10158280, 0, 0, 10158325, 3, 0, 10158326, 3, 0, 10158327, 3, 0, 10223810, 0, 0, 10223811, 0, 0, 10223816, 0, 0, 10223817, 0, 0, 10223862, 3, 0, 10223863, 3, 0, 10289346, 0, 0, 10289353, 0, 0, 10289397, 3, 0, 10289398, 3, 0, 10289399, 3, 0, 10354882, 0, 0, 10354889, 0, 0, 10354932, 3, 0, 10354934, 3, 0, 10420418, 0, 0, 10420425, 0, 0, 10420468, 3, 0, 10420470, 3, 0, 10485953, 0, 0, 10485954, 0, 0, 10485960, 0, 0, 10485961, 0, 0, 10486004, 3, 0, 10486006, 3, 0, 10551489, 0, 0, 10551496, 0, 0, 10551540, 3, 0, 10551542, 3, 0, 10617024, 0, 0, 10617025, 0, 0, 10617032, 0, 0, 10617076, 3, 0, 10617078, 3, 0, 10682560, 0, 0, 10682568, 0, 0, 10682611, 3, 0, 10682614, 3, 0, 10748095, 0, 0, 10748103, 0, 0, 10748147, 3, 0, 10748150, 3, 0, 10813631, 0, 0, 10813639, 0, 0, 10813683, 3, 0, 10813686, 3, 0, 10879175, 0, 0, 10879219, 3, 0, 10879222, 3, 0, 10944710, 0, 0, 10944711, 0, 0, 10944755, 3, 0, 10944758, 3, 0, 10944759, 3, 0, 11010245, 0, 0, 11010246, 0, 0, 11010291, 3, 0, 11010295, 3, 0, 11075781, 0, 0, 11075827, 3, 0, 11075831, 3, 0, 11141317, 0, 0, 11141363, 3, 0, 11141367, 3, 0, 11206853, 0, 0, 11206899, 3, 0, 11206903, 3, 0, 11206904, 3, 0, 11272388, 0, 0, 11272434, 3, 0, 11272440, 3, 0, 11272441, 3, 0, 11337970, 3, 0, 11337977, 3, 0, 11337978, 3, 0, 11403506, 3, 0, 11469042, 3, 0, 11534577, 3, 0, 11534578, 3, 0, 11600113, 3, 0, 11665649, 3, 0, 11731185, 3, 0, 11796721, 3, 0, 11862256, 3, 0, 11862257, 3, 0, 11927791, 3, 0, 11993327, 3, 0, 12058862, 3, 0 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -129,26 +158,182 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Heart" parent="hearts" instance=ExtResource( 14 )]
-position = Vector2( 701.899, 409.229 )
+position = Vector2( 645.559, 523.17 )
 
 [node name="Node2D3" type="Node2D" parent="."]
+
+[node name="checkPoint2" parent="Node2D3" instance=ExtResource( 16 )]
+position = Vector2( 790.255, 518.584 )
 
 [node name="checkPoint" parent="Node2D3" instance=ExtResource( 16 )]
 position = Vector2( 82.0029, 566.6 )
 
-[node name="checkPoint2" parent="Node2D3" instance=ExtResource( 16 )]
-position = Vector2( 794, 345 )
+[node name="background elements" type="Node2D" parent="."]
+z_index = -3
 
-[node name="Node2D4" type="Node2D" parent="."]
+[node name="Sprite18" type="Sprite" parent="background elements"]
+position = Vector2( -484.039, 357.262 )
+scale = Vector2( 0.311745, 0.311745 )
+texture = ExtResource( 24 )
 
-[node name="Sprite4" type="Sprite" parent="Node2D4"]
-position = Vector2( 354.458, 279.34 )
-scale = Vector2( 0.389782, 0.389782 )
+[node name="Sprite5" type="Sprite" parent="background elements"]
+position = Vector2( 743.101, 494.928 )
+rotation = -0.0441705
+scale = Vector2( 0.134537, 0.134537 )
+texture = ExtResource( 22 )
+
+[node name="treee" type="Sprite" parent="background elements"]
+position = Vector2( 336.819, 366.275 )
+scale = Vector2( 0.2607, 0.2607 )
 z_index = -3
 texture = ExtResource( 17 )
+
+[node name="viselica" type="Sprite" parent="background elements/treee"]
+position = Vector2( -48.5333, -1006.79 )
+scale = Vector2( 0.412302, 0.412302 )
+texture = ExtResource( 31 )
+
+[node name="Sprite7" type="Sprite" parent="background elements/treee/viselica"]
+position = Vector2( 215.598, -131.998 )
+scale = Vector2( 1.72085, 1.72085 )
+texture = ExtResource( 30 )
+
+[node name="gnezdo" type="Sprite" parent="background elements/treee"]
+position = Vector2( -14.3954, -766.183 )
+scale = Vector2( 2.11106, 2.11106 )
+texture = ExtResource( 25 )
+
+[node name="Sprite41" type="Sprite" parent="background elements/treee"]
+position = Vector2( 399.068, 545.425 )
+scale = Vector2( 0.849037, 0.849037 )
+texture = ExtResource( 19 )
+
+[node name="Sprite43" type="Sprite" parent="background elements/treee"]
+position = Vector2( 406.28, 447.533 )
+scale = Vector2( 0.91511, 0.91511 )
+texture = ExtResource( 20 )
+
+[node name="Sprite2" type="Sprite" parent="background elements"]
+position = Vector2( 750, 537 )
+scale = Vector2( 0.352727, 0.352727 )
+texture = ExtResource( 18 )
+
+[node name="Sprite36" type="Sprite" parent="background elements"]
+position = Vector2( 641.862, 471.821 )
+scale = Vector2( 0.663097, 0.663097 )
+texture = ExtResource( 23 )
+
+[node name="Sprite40" type="Sprite" parent="background elements"]
+position = Vector2( 648.536, 477.828 )
+scale = Vector2( 0.663097, 0.663097 )
+texture = ExtResource( 21 )
+
+[node name="Sprite6" type="Sprite" parent="background elements"]
+position = Vector2( -177.421, 221.377 )
+scale = Vector2( 0.775789, 0.775789 )
+texture = ExtResource( 27 )
+
+[node name="Sprite25" type="Sprite" parent="background elements"]
+position = Vector2( -243.649, 427.746 )
+texture = ExtResource( 28 )
+
+[node name="Sprite3" type="Sprite" parent="background elements"]
+position = Vector2( -573.617, 101.367 )
+rotation = 1.43305
+scale = Vector2( 0.565711, 0.565711 )
+texture = ExtResource( 26 )
+
+[node name="Sprite4" type="Sprite" parent="background elements"]
+position = Vector2( -82.9868, 426.144 )
+rotation = 1.3018
+scale = Vector2( 0.410828, 0.410828 )
+texture = ExtResource( 29 )
+
+[node name="Sprite46" type="Sprite" parent="background elements"]
+position = Vector2( 161.055, 526.635 )
+scale = Vector2( 0.574844, 0.574844 )
+texture = ExtResource( 32 )
+
+[node name="Sprite7" type="Sprite" parent="background elements"]
+position = Vector2( 909.196, 554.571 )
+rotation = 0.0573497
+scale = Vector2( 0.25616, 0.25616 )
+texture = ExtResource( 33 )
+
+[node name="Sprite13" type="Sprite" parent="background elements"]
+position = Vector2( 1283.01, 527.482 )
+rotation = -0.053329
+scale = Vector2( 0.245219, 0.236977 )
+texture = ExtResource( 43 )
+
+[node name="Sprite55" type="Sprite" parent="background elements"]
+position = Vector2( 1599.77, 509.58 )
+scale = Vector2( 0.147866, 0.147866 )
+texture = ExtResource( 36 )
+
+[node name="japanese gates" type="Node2D" parent="background elements"]
+position = Vector2( -3, 25 )
+scale = Vector2( 1.02055, 0.99546 )
+
+[node name="Sprite8" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1863.99, 371.911 )
+scale = Vector2( 0.232805, 0.184327 )
+texture = ExtResource( 35 )
+
+[node name="Sprite19" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1806.5, 373 )
+scale = Vector2( 0.159025, 0.29749 )
+texture = ExtResource( 38 )
+
+[node name="Sprite9" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1866.01, 423.764 )
+scale = Vector2( 0.159025, 0.29749 )
+texture = ExtResource( 37 )
+
+[node name="Sprite23" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1756.72, 425.498 )
+rotation = 0.0506343
+scale = Vector2( 0.114692, -0.163552 )
+texture = ExtResource( 39 )
+
+[node name="Sprite25" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1813.85, 358.595 )
+rotation = -0.0502347
+scale = Vector2( 0.187303, 0.127402 )
+texture = ExtResource( 40 )
+
+[node name="Sprite47" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1779.49, 412.334 )
+rotation = 0.799485
+scale = Vector2( 0.404606, 0.202252 )
+texture = ExtResource( 45 )
+
+[node name="Sprite29" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1838.89, 414.455 )
+rotation = -0.845367
+scale = Vector2( 0.106207, 0.106207 )
+texture = ExtResource( 44 )
+
+[node name="Sprite12" type="Sprite" parent="background elements/japanese gates"]
+position = Vector2( 1811.5, 389 )
+rotation = 1.50974
+scale = Vector2( 0.114692, -0.20967 )
+texture = ExtResource( 41 )
+
+[node name="Sprite39" type="Sprite" parent="background elements"]
+position = Vector2( 1131.8, 507 )
+scale = Vector2( 0.144922, 0.144922 )
+texture = ExtResource( 42 )
+
+[node name="bottom background elements" type="Node2D" parent="."]
+
+[node name="Sprite16" type="Sprite" parent="bottom background elements"]
+position = Vector2( 144.373, 844.91 )
+scale = Vector2( 1.28991, 0.979957 )
+texture = ExtResource( 34 )
 
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
 [connection signal="pause" from="levelUI" to="Player" method="_on_levelUI_pause"]
 [connection signal="heart_collect" from="hearts/Heart" to="Player" method="_on_Heart_heart_collect"]
-[connection signal="checkpoint_pos" from="Node2D3/checkPoint" to="Player" method="_on_checkPoint_checkpoint_pos"]
 [connection signal="checkpoint_pos" from="Node2D3/checkPoint2" to="Player" method="_on_checkPoint_checkpoint_pos"]
+[connection signal="checkpoint_pos" from="Node2D3/checkPoint" to="Player" method="_on_checkPoint_checkpoint_pos"]
