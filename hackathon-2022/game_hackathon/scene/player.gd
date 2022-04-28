@@ -90,3 +90,16 @@ func _on_checkPoint_checkpoint_pos(position):
 
 func to_last_checkpoint():
 	position = last_checkpoint_pos
+
+
+
+
+func _on_KinematicBody2D_trap():
+	decrease_num_of_hearts()
+	to_last_checkpoint()
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		decrease_num_of_hearts()
+		to_last_checkpoint()
