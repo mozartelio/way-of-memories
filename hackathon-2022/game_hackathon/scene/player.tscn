@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/char/jump_left.png" type="Texture" id=1]
 [ext_resource path="res://assets/char/run-left+.png" type="Texture" id=2]
@@ -22,21 +22,6 @@ region = Rect2( 57, 0, 57, 97 )
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 114, 0, 57, 97 )
-
-[sub_resource type="AtlasTexture" id=31]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 55, 93 )
-
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 55, 0, 55, 93 )
-
-[sub_resource type="AtlasTexture" id=33]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 110, 0, 55, 93 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
@@ -83,16 +68,26 @@ flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 106, 0, 53, 92 )
 
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 55, 93 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 55, 0, 55, 93 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 110, 0, 55, 93 )
+
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "idle",
-"speed": 3.0
-}, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
-"loop": true,
-"name": "jump_left",
 "speed": 3.0
 }, {
 "frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
@@ -109,24 +104,40 @@ animations = [ {
 "loop": true,
 "name": "run_right",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "jump_left",
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=40]
-radius = 26.0
-height = 38.0
+radius = 27.0
+height = 12.0
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 24.5, 17.5 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 6
 script = ExtResource( 4 )
+jump_speed = 230
+gravity = 8
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -5, 6 )
 frames = SubResource( 24 )
 animation = "idle"
+frame = 1
 playing = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 0 )
+position = Vector2( -6, -6 )
 shape = SubResource( 40 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -6, 33 )
+shape = SubResource( 41 )
 
 [connection signal="animate" from="." to="AnimatedSprite" method="_on_Player_animate"]
