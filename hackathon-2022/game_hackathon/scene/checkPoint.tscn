@@ -52,6 +52,7 @@ animations = [ {
 radius = 7.0
 
 [node name="checkPoint" type="Node2D"]
+scale = Vector2( 2.5, 3 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
