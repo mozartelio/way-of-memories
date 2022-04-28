@@ -806,25 +806,7 @@ one_way_collision_margin = 16.2
 [node name="platform" type="CollisionPolygon2D" parent="map_ground_collision"]
 polygon = PoolVector2Array( -81984.5, -171.576, -82337, -174.631, -83218.9, -176.291, -85259.1, -174.257, -85989.5, -177.686, -86435.3, -178.834, -88523.5, -177.308, -91090.3, -177.741, -91410.7, -175.195, -91548.5, -167.842, -91564.5, -134.575, -84051.1, -136.612, -81808.3, -134.575, -81792.3, -160.034 )
 
-[node name="Container" type="Container" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Book" parent="Container" instance=ExtResource( 48 )]
-position = Vector2( 389, 518 )
-
-[node name="Book2" parent="Container" instance=ExtResource( 48 )]
-position = Vector2( 333, 514 )
-
-[node name="Book3" parent="Container" instance=ExtResource( 48 )]
-position = Vector2( 270, 519 )
-
-[node name="Book4" parent="Container" instance=ExtResource( 48 )]
-position = Vector2( 110, 535 )
-
-[node name="Portal" parent="." instance=ExtResource( 73 )]
-position = Vector2( 1776, 484 )
-
+[connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
 [connection signal="pause" from="levelUI" to="Player" method="_on_levelUI_pause"]
 [connection signal="heart_collect" from="hearts/Heart" to="Player" method="_on_Heart_heart_collect"]

@@ -8,6 +8,7 @@ var show := false
 signal pause
 
 func _ready():
+	hide_gameOverUI()
 	hide_controls()
 	hide_menu()
 	var buttons = $UI/menu/Buttons.get_children()
@@ -51,6 +52,19 @@ func hide_menu():
 	for child in children:
 		child.hide()
 
+func hide_gameOverUI():
+	var children = $UI/gameOverUI.get_children()
+	
+	for child in children:
+		child.hide()
+
+
+func show_gameOverUI():
+	var children = $UI/gameOverUI.get_children()
+	
+	for child in children:
+		child.show()
+
 func open_scene(path):
 	get_tree().change_scene(path)
 
@@ -80,3 +94,14 @@ func hide_controls():
 	
 	for child in children:
 		child.hide()
+
+
+func _on_Player_game_over():
+	show_gameOverUI()
+	var timer = get_node("Timer")
+	timer.start()
+
+
+
+func _on_Timer_timeout():
+	open_scene("res://scene/menu.tscn")

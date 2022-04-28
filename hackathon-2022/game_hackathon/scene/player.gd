@@ -13,6 +13,7 @@ var last_checkpoint_pos;
 
 signal animate
 signal hearth_signal
+signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -62,6 +63,8 @@ func increase_num_of_hearts():
 
 func decrease_num_of_hearts():
 	number_of_hearth = number_of_hearth - 1
+	if number_of_hearth < 0:
+		emit_signal("game_over")
 
 
 func animate():
