@@ -120,13 +120,11 @@ collision_layer = 3
 collision_mask = 6
 script = ExtResource( 4 )
 jump_speed = 230
-gravity = 8
 
 [node name="PlayerAnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -5, 6 )
 frames = SubResource( 24 )
 animation = "idle"
-frame = 2
 playing = true
 script = ExtResource( 5 )
 
