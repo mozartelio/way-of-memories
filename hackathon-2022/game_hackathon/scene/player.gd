@@ -30,6 +30,7 @@ func _physics_process(delta):
 		
 		if position.y > 1000:
 			to_last_checkpoint()
+			decrease_num_of_hearts()
 
 func move():
 	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_right"):
