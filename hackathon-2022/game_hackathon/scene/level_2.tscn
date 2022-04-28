@@ -463,3 +463,11 @@ position = Vector2( 6254, 488 )
 
 [node name="levelUI" parent="." instance=ExtResource( 16 )]
 position = Vector2( -2, 1 )
+
+[node name="Heart2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 902, 524 )
+
+[connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
+[connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
+[connection signal="heart_collect" from="Heart" to="Player" method="_on_Heart_heart_collect"]
+[connection signal="heart_collect" from="Heart2" to="Player" method="_on_Heart_heart_collect"]
