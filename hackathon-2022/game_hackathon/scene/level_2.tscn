@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/Background/08_Forest.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background/09_Forest.png" type="Texture" id=2]
@@ -16,7 +16,9 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees1/sprite5.png" type="Texture" id=14]
 [ext_resource path="res://scene/checkPoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scene/levelUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scene/Book.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees1/sprite3.png" type="Texture" id=18]
+[ext_resource path="res://scene/PortalToMenu.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks1/sprite4.png" type="Texture" id=22]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks1/sprite6.png" type="Texture" id=23]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite15.png" type="Texture" id=26]
@@ -141,26 +143,89 @@ polygon = PoolVector2Array( 2261, 1187, 2203, 891, 2221, 743, 2295, 591, 3070, 5
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 1134, 586, 1132, 485, 1186, 458, 1411, 454, 1528, 475, 1618, 528, 1650, 574 )
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 2074, 830, 2195, 810, 2190, 871 )
-
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -32, 80 )
 polygon = PoolVector2Array( 5267, 689, 5359, 934, 5413, 1039, 5446, 1046, 5396, 785, 5413, 607, 5481, 447, 5689, 453, 6596, 455, 7561, 459, 7671, 445, 8469, 424, 8501, 441, 8497, 472, 8459, 579, 8595, 875, 8611, 1099, 8513, 1177, 8337, 504, 5585, 552, 5484, 1124, 5278, 1041 )
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( -24, -29 )
-polygon = PoolVector2Array( 5294, 757, 5394, 761, 5395, 845 )
+[node name="shipi" type="Node2D" parent="."]
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( 454.886, 42.8758 )
-scale = Vector2( 0.884791, 0.932362 )
-polygon = PoolVector2Array( 3865, 592, 3864, 576, 3872, 554, 3986, 539, 4008, 553, 4017, 592, 4027, 612, 3861, 610 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="shipi"]
+position = Vector2( 7048, 59 )
+script = ExtResource( 38 )
 
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2( -787.758, -3.99988 )
-scale = Vector2( 0.881024, 1 )
-polygon = PoolVector2Array( 3865, 592, 3864, 576, 3872, 554, 3986, 539, 4008, 553, 4017, 592, 4027, 612, 3861, 610 )
+[node name="Sprite39" type="Sprite" parent="shipi/KinematicBody2D"]
+position = Vector2( 20, -2 )
+texture = ExtResource( 37 )
+
+[node name="Area2D" type="Area2D" parent="shipi/KinematicBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/KinematicBody2D/Area2D"]
+position = Vector2( -13, 0 )
+polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="shipi"]
+position = Vector2( 2158, 100 )
+script = ExtResource( 38 )
+
+[node name="Sprite39" type="Sprite" parent="shipi/KinematicBody2D2"]
+position = Vector2( 20, -2 )
+texture = ExtResource( 37 )
+
+[node name="Area2D" type="Area2D" parent="shipi/KinematicBody2D2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/KinematicBody2D2/Area2D"]
+position = Vector2( -13, 0 )
+polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
+
+[node name="Sprite30" type="Sprite" parent="shipi"]
+position = Vector2( 1189, 763 )
+rotation = 2.87916
+texture = ExtResource( 30 )
+offset = Vector2( -1043.95, -338.419 )
+
+[node name="Area2D" type="Area2D" parent="shipi/Sprite30"]
+position = Vector2( -910.757, -256.045 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="shipi/Sprite30/Area2D"]
+position = Vector2( -2963.56, -1434.19 )
+scale = Vector2( 1.37913, 1.72439 )
+polygon = PoolVector2Array( 2074, 830, 2195, 810, 2190, 871 )
+
+[node name="Sprite39" type="Sprite" parent="shipi"]
+position = Vector2( 5437, 822 )
+rotation = 3.13911
+scale = Vector2( 0.576637, 0.576637 )
+texture = ExtResource( 30 )
+offset = Vector2( 87.4146, 57.2162 )
+
+[node name="Area2D" type="Area2D" parent="shipi/Sprite39"]
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="shipi/Sprite39/Area2D"]
+position = Vector2( -11051.6, -898.007 )
+scale = Vector2( 2.09774, 1.25954 )
+polygon = PoolVector2Array( 5298.68, 843.903, 5366.98, 716.686, 5424.44, 796.25, 5401.11, 914.563, 5394.6, 844.317 )
+
+[node name="Sprite40" type="Sprite" parent="shipi"]
+position = Vector2( 3939, 600 )
+rotation = 3.13911
+scale = Vector2( 0.289963, 0.393929 )
+texture = ExtResource( 30 )
+
+[node name="Area2D" type="Area2D" parent="shipi/Sprite40"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/Sprite40/Area2D"]
+polygon = PoolVector2Array( 224.209, -12.2828, 185.939, 86.6501, -207.222, 88.4702, -255.161, -13.1588 )
+
+[node name="Sprite41" type="Sprite" parent="shipi"]
+position = Vector2( 2879, 600 )
+rotation = 3.13911
+scale = Vector2( 0.289963, 0.393929 )
+texture = ExtResource( 30 )
+
+[node name="Area2D" type="Area2D" parent="shipi/Sprite41"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/Sprite41/Area2D"]
+polygon = PoolVector2Array( 224.209, -12.2828, 185.939, 86.6501, -207.222, 88.4702, -255.161, -13.1588 )
 
 [node name="ground" type="Node2D" parent="."]
 
@@ -306,23 +371,12 @@ position = Vector2( 7923, 253.937 )
 scale = Vector2( 0.639868, 0.639868 )
 texture = ExtResource( 14 )
 
-[node name="Sprite30" type="Sprite" parent="ground"]
-position = Vector2( 2285, 819 )
-rotation = 2.87916
-texture = ExtResource( 30 )
-
 [node name="Sprite31" type="Sprite" parent="ground"]
 position = Vector2( 2150, 1209 )
 rotation = 3.13879
 scale = Vector2( 1, 1.84519 )
 texture = ExtResource( 23 )
 offset = Vector2( -214.769, -66.7774 )
-
-[node name="Sprite32" type="Sprite" parent="ground"]
-position = Vector2( 2683, 588 )
-rotation = 3.13911
-scale = Vector2( 0.289963, 0.393929 )
-texture = ExtResource( 30 )
 
 [node name="Sprite34" type="Sprite" parent="ground"]
 position = Vector2( 8382, 370.97 )
@@ -368,43 +422,6 @@ texture = ExtResource( 42 )
 position = Vector2( 825.25, 566.25 )
 scale = Vector2( 0.620482, 0.805882 )
 texture = ExtResource( 42 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="ground"]
-position = Vector2( 7048, 59 )
-script = ExtResource( 38 )
-
-[node name="Sprite39" type="Sprite" parent="ground/KinematicBody2D"]
-position = Vector2( 20, -2 )
-texture = ExtResource( 37 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground/KinematicBody2D"]
-position = Vector2( -13, 0 )
-polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
-
-[node name="Sprite39" type="Sprite" parent="ground"]
-position = Vector2( 5437, 822 )
-rotation = 3.13911
-scale = Vector2( 0.576637, 0.576637 )
-texture = ExtResource( 30 )
-offset = Vector2( 87.4146, 57.2162 )
-
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="ground"]
-position = Vector2( 2158, 100 )
-script = ExtResource( 38 )
-
-[node name="Sprite39" type="Sprite" parent="ground/KinematicBody2D2"]
-position = Vector2( 20, -2 )
-texture = ExtResource( 37 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground/KinematicBody2D2"]
-position = Vector2( -13, 0 )
-polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
-
-[node name="Sprite40" type="Sprite" parent="ground"]
-position = Vector2( 3939, 600 )
-rotation = 3.13911
-scale = Vector2( 0.289963, 0.393929 )
-texture = ExtResource( 30 )
 
 [node name="Sprite52" type="Sprite" parent="ground"]
 position = Vector2( 3340, 574 )
@@ -463,3 +480,26 @@ position = Vector2( 6254, 488 )
 
 [node name="levelUI" parent="." instance=ExtResource( 16 )]
 position = Vector2( -2, 1 )
+
+[node name="Heart2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 902, 524 )
+
+[node name="PortalToMenu" parent="." instance=ExtResource( 19 )]
+position = Vector2( 8292, 444 )
+
+[node name="Book" parent="." instance=ExtResource( 17 )]
+position = Vector2( 7998, 497 )
+
+[node name="Book" parent="Book" instance=ExtResource( 17 )]
+position = Vector2( -1661, 7 )
+
+[node name="Book" parent="Book/Book" instance=ExtResource( 17 )]
+position = Vector2( -1534, 49 )
+
+[node name="Book2" parent="Book/Book" instance=ExtResource( 17 )]
+position = Vector2( -5247, 44 )
+
+[connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
+[connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
+[connection signal="heart_collect" from="Heart" to="Player" method="_on_Heart_heart_collect"]
+[connection signal="heart_collect" from="Heart2" to="Player" method="_on_Heart_heart_collect"]

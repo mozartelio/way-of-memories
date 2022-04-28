@@ -1,17 +1,19 @@
 extends AnimatedSprite
 
 
+
 func _on_Player_animate(motion):
 	if motion.y < 0:
-		if motion.x > 0:
-			play("jump_right")
-		elif motion.x < 0:
-			play("jump_left")
-		else:
-			play("idle")
+		play("jump")
 	elif motion.x > 0:
-		play("run_right")
+		play("run")
+		flip_h = false
 	elif motion.x < 0:
-		play("run_left")
+		play("run")
+		flip_h = true
 	else:
 		play("idle")
+
+
+func _on_KinematicBody2D_animate():
+	pass # Replace with function body.

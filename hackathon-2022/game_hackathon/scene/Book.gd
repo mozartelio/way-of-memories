@@ -24,12 +24,12 @@ signal book2_collect
 
 func vanish():
   queue_free()
-
+var index = 0
 
 
 func _on_Area2D_body_entered(body):
 	
-	var index = t.get_page()
+	index = t.get_page()
 	
 	var rtl: RichTextLabel = RichTextLabel.new()
 	rtl.anchor_right = 1
@@ -46,10 +46,15 @@ func _on_Area2D_body_entered(body):
 
 	add_child(rtl)
 
+
+
+
 	
-	
+
 
 
 func _on_Area2D_body_exited(body):
 	emit_signal("book_collect")
 	$AnimationPlayer.play("vanish")
+
+			
