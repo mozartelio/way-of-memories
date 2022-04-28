@@ -39,7 +39,7 @@ func move():
 
 
 func jump():
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		motion.y = -jump_speed
 
 
