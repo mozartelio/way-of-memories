@@ -47,7 +47,6 @@ z_index = 3
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -4.00001, -85 )
 current = true
-smoothing_enabled = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player/Camera2D"]
 
