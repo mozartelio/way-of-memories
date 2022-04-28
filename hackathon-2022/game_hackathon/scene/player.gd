@@ -103,3 +103,4 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		decrease_num_of_hearts()
 		to_last_checkpoint()
+
