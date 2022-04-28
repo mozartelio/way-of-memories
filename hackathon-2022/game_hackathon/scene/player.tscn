@@ -41,7 +41,6 @@
 [ext_resource path="res://assets/Basic/Stand - Basic/[stand -_00001] (imported)-stand -_00007.png.png" type="Texture" id=38]
 [ext_resource path="res://assets/Basic/Jump - Basic/Jump - Basic.png" type="Texture" id=39]
 [ext_resource path="res://assets/Basic/Run - Basic/[run -_00001] (imported)-run -_00001.png.png" type="Texture" id=40]
->>>>>>> hackathon-2022/game_hackathon/scene/player.tscn
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
