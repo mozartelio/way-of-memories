@@ -19,6 +19,7 @@
 [ext_resource path="res://scene/Book.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees1/sprite3.png" type="Texture" id=18]
 [ext_resource path="res://scene/PortalToMenu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scene/Sprite39.gd" type="Script" id=20]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks1/sprite4.png" type="Texture" id=22]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks1/sprite6.png" type="Texture" id=23]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite15.png" type="Texture" id=26]
@@ -31,7 +32,6 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite23.png" type="Texture" id=35]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite47.png" type="Texture" id=36]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite13.png" type="Texture" id=37]
-[ext_resource path="res://scene/lovuska.gd" type="Script" id=38]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite36.png" type="Texture" id=39]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite15.png" type="Texture" id=40]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite34.png" type="Texture" id=41]
@@ -149,33 +149,28 @@ polygon = PoolVector2Array( 5267, 689, 5359, 934, 5413, 1039, 5446, 1046, 5396, 
 
 [node name="shipi" type="Node2D" parent="."]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="shipi"]
-position = Vector2( 7048, 59 )
-script = ExtResource( 38 )
-
-[node name="Sprite39" type="Sprite" parent="shipi/KinematicBody2D"]
-position = Vector2( 20, -2 )
+[node name="Sprite43" type="Sprite" parent="shipi"]
+position = Vector2( 7068, 57 )
 texture = ExtResource( 37 )
+script = ExtResource( 20 )
 
-[node name="Area2D" type="Area2D" parent="shipi/KinematicBody2D"]
+[node name="Area2D" type="Area2D" parent="shipi/Sprite43"]
+position = Vector2( -20, 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/KinematicBody2D/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/Sprite43/Area2D"]
 position = Vector2( -13, 0 )
 polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
 
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="shipi"]
-position = Vector2( 2158, 100 )
-collision_layer = 4
-script = ExtResource( 38 )
-
-[node name="Sprite39" type="Sprite" parent="shipi/KinematicBody2D2"]
-position = Vector2( 20, -2 )
+[node name="Sprite42" type="Sprite" parent="shipi"]
+position = Vector2( 2178, 98 )
 texture = ExtResource( 37 )
+script = ExtResource( 20 )
 
-[node name="Area2D" type="Area2D" parent="shipi/KinematicBody2D2"]
+[node name="Area2D" type="Area2D" parent="shipi/Sprite42"]
+position = Vector2( -20, 2 )
 collision_layer = 4
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/KinematicBody2D2/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/Sprite42/Area2D"]
 position = Vector2( -13, 0 )
 polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
 
@@ -504,9 +499,6 @@ position = Vector2( -5247, 44 )
 
 [connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
-[connection signal="trap" from="shipi/KinematicBody2D" to="Player" method="_on_KinematicBody2D_trap"]
-[connection signal="body_entered" from="shipi/KinematicBody2D/Area2D" to="shipi/KinematicBody2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="shipi/KinematicBody2D2/Area2D" to="shipi/KinematicBody2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="shipi/Sprite30/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="shipi/Sprite39/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="shipi/Sprite40/Area2D" to="Player" method="_on_Area2D_body_entered"]
