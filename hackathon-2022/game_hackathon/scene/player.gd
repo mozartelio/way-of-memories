@@ -3,8 +3,8 @@ extends KinematicBody2D
 
 var motion = Vector2(0,0)
 const UP = Vector2(0,-1)
-export var speed = 100
-export var jump_speed = 50
+export var speed = 150
+export var jump_speed = 75
 export var gravity = 1
 
 var number_of_hearth = 3
