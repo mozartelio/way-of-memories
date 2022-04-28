@@ -9,13 +9,14 @@ export var gravity = 1
 
 var number_of_hearth = 3
 var is_game_on_pause = false
+var last_checkpoint_pos;
 
 signal animate
 signal hearth_signal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	last_checkpoint_pos = position
 
 
 func _physics_process(delta):
@@ -26,6 +27,10 @@ func _physics_process(delta):
 		jump()
 		move_and_slide(motion, UP)
 		animate()
+		
+		if position.y > 1000:
+			to_last_checkpoint()
+			decrease_num_of_hearts()
 
 func move():
 	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_right"):
@@ -73,3 +78,11 @@ func _on_Heart_heart_collect():
 
 func _on_levelUI_pause(pause):
 	is_game_on_pause = pause
+
+
+func _on_checkPoint_checkpoint_pos(position):
+	last_checkpoint_pos = position
+
+
+func to_last_checkpoint():
+	position = last_checkpoint_pos
