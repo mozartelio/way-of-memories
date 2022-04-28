@@ -14,6 +14,10 @@ config/name="game"
 run/main_scene="res://scene/menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Paging="*res://scripts/paging.gd"
+
 [display]
 
 window/size/resizable=false
