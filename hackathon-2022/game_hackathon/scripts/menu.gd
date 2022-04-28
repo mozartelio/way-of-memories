@@ -3,14 +3,13 @@ extends Control
 
 var max_move := 55
 var screen_center := Vector2.ZERO
+var show = false
 
 func _ready():
-	var i := 0
-	for button in $Buttons.get_children():
-		if i == 2:
-			break
-		button.connect("pressed", self, "open_scene", [button.open_scene])
-		i = i + 1
+	hide_menu()
+	
+	var buttons := $Buttons.get_children()
+	buttons[0].connect("pressed", self, "open_scene", [buttons[0].open_scene])
 	
 	var rect = get_viewport_rect()
 	screen_center = rect_position + (rect.size / 2)
@@ -25,4 +24,27 @@ func open_scene(path):
 	
 func _unhandled_key_input(event):
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		if show == false:
+			get_tree().quit()
+		else:
+			hide_menu()
+
+
+func _on_ControlsButton_button_up():
+	show_menu()
+
+
+func show_menu():
+	show = true
+	var children = $Buttons/ControlsButton/Node2D/UI/menu.get_children()
+	
+	for child in children:
+		child.show()
+
+
+func hide_menu():
+	show = false
+	var children = $Buttons/ControlsButton/Node2D/UI/menu.get_children()
+	
+	for child in children:
+		child.hide()

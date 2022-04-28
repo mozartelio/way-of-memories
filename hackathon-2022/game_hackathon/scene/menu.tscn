@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/menu.gd" type="Script" id=1]
 [ext_resource path="res://scene/buttons/NewGameButton.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/buttons/Controls Button hover.png" type="Texture" id=19]
 [ext_resource path="res://assets/buttons/Exit Button hover.png" type="Texture" id=20]
 [ext_resource path="res://scripts/exit_button.gd" type="Script" id=21]
+[ext_resource path="res://scene/controls.tscn" type="PackedScene" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -57,7 +58,9 @@ margin_bottom = 466.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 19 )
-open_scene = "res://scene/controls.tscn"
+script = null
+
+[node name="Node2D" parent="Buttons/ControlsButton" instance=ExtResource( 22 )]
 
 [node name="ExitButton" parent="Buttons" instance=ExtResource( 2 )]
 margin_left = 977.0
@@ -180,4 +183,5 @@ texture = ExtResource( 11 )
 position = Vector2( 512, 300 )
 current = true
 
+[connection signal="button_up" from="Buttons/ControlsButton" to="." method="_on_ControlsButton_button_up"]
 [connection signal="button_up" from="Buttons/ExitButton" to="Buttons/ExitButton" method="_on_ExitButton_button_up"]

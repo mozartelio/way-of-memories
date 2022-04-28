@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scene/levelUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/items/heartWhite.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/buttons/Resume Button press.png" type="Texture" id=10]
 [ext_resource path="res://assets/buttons/Resume Button hover.png" type="Texture" id=11]
 [ext_resource path="res://assets/buttons/Resume Button.png" type="Texture" id=12]
+[ext_resource path="res://scene/controls.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.309804 )
@@ -88,7 +89,7 @@ texture_pressed = ExtResource( 10 )
 texture_hover = ExtResource( 11 )
 script = null
 
-[node name="ControlsButton3" parent="UI/menu/Buttons" instance=ExtResource( 4 )]
+[node name="ControlsButton" parent="UI/menu/Buttons" instance=ExtResource( 4 )]
 margin_left = 977.0
 margin_top = 266.0
 margin_right = 1577.0
@@ -96,7 +97,7 @@ margin_bottom = 466.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 6 )
-open_scene = "res://scene/controls.tscn"
+script = null
 
 [node name="MenuButton" parent="UI/menu/Buttons" instance=ExtResource( 4 )]
 margin_left = 977.0
@@ -108,4 +109,10 @@ texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 9 )
 open_scene = "res://scene/menu.tscn"
 
+[node name="Node2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 388.8, 256.4 )
+scale = Vector2( 0.4, 0.4 )
+z_index = 2
+
 [connection signal="button_up" from="UI/menu/Buttons/ResumeButton" to="." method="_on_ResumeButton_button_up"]
+[connection signal="button_up" from="UI/menu/Buttons/ControlsButton" to="." method="_on_ControlsButton_button_up"]

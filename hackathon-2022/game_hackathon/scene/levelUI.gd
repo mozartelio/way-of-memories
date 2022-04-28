@@ -3,17 +3,15 @@ extends Node2D
 
 var charakter_hearth = 0
 var is_menu_visible = false
+var show := false
 
 signal pause
 
 func _ready():
+	hide_controls()
 	hide_menu()
-	var i := 0
-	for button in $UI/menu/Buttons.get_children():
-		if i == 0:
-			i = i + 1
-			continue
-		button.connect("pressed", self, "open_scene", [button.open_scene])
+	var buttons = $UI/menu/Buttons.get_children()
+	buttons[2].connect("pressed", self, "open_scene", [buttons[2].open_scene])
 	
 func update_hearts():
 	$UI/heartsUI/numOfHearts.text = String(charakter_hearth)
@@ -21,6 +19,10 @@ func update_hearts():
 
 func _unhandled_key_input(event):
 	if Input.is_action_pressed("ui_cancel"):
+		if show == true:
+			show = false
+			hide_controls()
+			return
 		if is_menu_visible == false:
 			is_menu_visible = true
 			show_menu()
@@ -57,3 +59,24 @@ func _on_ResumeButton_button_up():
 	is_menu_visible = false
 	hide_menu()
 	emit_signal("pause", false)
+
+
+func _on_ControlsButton_button_up():
+	show_controls()
+	
+func show_controls():
+	hide_menu()
+	show = true
+	var children = $Node2D/UI/menu.get_children()
+	
+	for child in children:
+		child.show()
+
+
+func hide_controls():
+	show_menu()
+	show = false
+	var children = $Node2D/UI/menu.get_children()
+	
+	for child in children:
+		child.hide()
