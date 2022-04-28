@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=74 format=2]
-
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://scene/level_1.gd" type="Script" id=1]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
@@ -49,11 +47,6 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite47.png" type="Texture" id=45]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile3_0_12x.png" type="Texture" id=46]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile8_0_12x.png" type="Texture" id=47]
-
-[ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite4.png" type="Texture" id=48]
-
-[ext_resource path="res://scene/Book.tscn" type="PackedScene" id=48]
-
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile10_0_12x.png" type="Texture" id=49]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile9_0_12x.png" type="Texture" id=50]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile7_0_12x.png" type="Texture" id=51]
@@ -78,7 +71,6 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite10.png" type="Texture" id=70]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite15.png" type="Texture" id=71]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite11.png" type="Texture" id=72]
-[ext_resource path="res://scene/PortalToLevel2.tscn" type="PackedScene" id=73]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -176,7 +168,7 @@ motion_mirroring = Vector2( 1920, 0 )
 texture = ExtResource( 5 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="Player/Camera2D"]
-rotation = 3.14159
+rotation = -3.14159
 transform = Transform2D( -1, -8.74228e-08, 8.74228e-08, -1, 0, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Player/Camera2D/ParallaxBackground2"]
@@ -876,7 +868,6 @@ flip_v = true
 [node name="Sprite14" type="Sprite" parent="background elements"]
 position = Vector2( 1631.45, 520.5 )
 scale = Vector2( 0.231094, 0.23696 )
-texture = ExtResource( 48 )
 
 [node name="foreground_elements" type="Node2D" parent="."]
 
@@ -919,4 +910,9 @@ polygon = PoolVector2Array( -49.1545, 26.045, -50.4894, 122.821, -39.8992, 128.4
 
 [node name="Timer" type="Timer" parent="pendulum_trap"]
 
+[connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
+[connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
+[connection signal="heart_collect" from="hearts/Heart" to="Player" method="_on_Heart_heart_collect"]
+[connection signal="checkpoint_pos" from="CheckPoints/checkPoint2" to="Player" method="_on_checkPoint_checkpoint_pos"]
+[connection signal="checkpoint_pos" from="CheckPoints/checkPoint" to="Player" method="_on_checkPoint_checkpoint_pos"]
 [connection signal="timeout" from="pendulum_trap/Timer" to="pendulum_trap" method="_on_Timer_timeout"]
