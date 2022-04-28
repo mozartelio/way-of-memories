@@ -63,6 +63,7 @@ expand = true
 [node name="menu" type="CanvasLayer" parent="UI"]
 
 [node name="Panel" type="Panel" parent="UI/menu"]
+visible = false
 margin_left = -54.0
 margin_top = -55.0
 margin_right = 1109.0
