@@ -38,21 +38,6 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 114, 0, 57, 92 )
 
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 53, 92 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 53, 0, 53, 92 )
-
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 106, 0, 53, 92 )
-
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 2 )
@@ -83,6 +68,21 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 110, 0, 55, 93 )
 
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 53, 92 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 53, 0, 53, 92 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 106, 0, 53, 92 )
+
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
@@ -95,11 +95,6 @@ animations = [ {
 "name": "jump_right",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
-"loop": true,
-"name": "run_right",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
 "loop": true,
 "name": "run_left",
@@ -109,6 +104,11 @@ animations = [ {
 "loop": true,
 "name": "jump_left",
 "speed": 3.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "run_right",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=40]
@@ -125,7 +125,6 @@ jump_speed = 230
 position = Vector2( -5, 6 )
 frames = SubResource( 24 )
 animation = "idle"
-frame = 2
 playing = true
 script = ExtResource( 5 )
 
