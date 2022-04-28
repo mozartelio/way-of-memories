@@ -165,6 +165,7 @@ polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96,
 
 [node name="KinematicBody2D2" type="KinematicBody2D" parent="shipi"]
 position = Vector2( 2158, 100 )
+collision_layer = 4
 script = ExtResource( 38 )
 
 [node name="Sprite39" type="Sprite" parent="shipi/KinematicBody2D2"]
@@ -172,6 +173,7 @@ position = Vector2( 20, -2 )
 texture = ExtResource( 37 )
 
 [node name="Area2D" type="Area2D" parent="shipi/KinematicBody2D2"]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/KinematicBody2D2/Area2D"]
 position = Vector2( -13, 0 )
@@ -185,6 +187,7 @@ offset = Vector2( -1043.95, -338.419 )
 
 [node name="Area2D" type="Area2D" parent="shipi/Sprite30"]
 position = Vector2( -910.757, -256.045 )
+collision_layer = 5
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="shipi/Sprite30/Area2D"]
 position = Vector2( -2963.56, -1434.19 )
@@ -501,5 +504,13 @@ position = Vector2( -5247, 44 )
 
 [connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
+[connection signal="trap" from="shipi/KinematicBody2D" to="Player" method="_on_KinematicBody2D_trap"]
+[connection signal="body_entered" from="shipi/KinematicBody2D/Area2D" to="shipi/KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="shipi/KinematicBody2D2/Area2D" to="shipi/KinematicBody2D2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="shipi/Sprite30/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="shipi/Sprite39/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="shipi/Sprite40/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="shipi/Sprite41/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="heart_collect" from="Heart" to="Player" method="_on_Heart_heart_collect"]
+[connection signal="checkpoint_pos" from="checkPoint" to="Player" method="_on_checkPoint_checkpoint_pos"]
 [connection signal="heart_collect" from="Heart2" to="Player" method="_on_Heart_heart_collect"]
