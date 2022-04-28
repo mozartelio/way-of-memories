@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/Basic/Land - Basic/[bat_00001] (imported)-land_00001.png 1.png" type="Texture" id=3]
 [ext_resource path="res://scene/player.gd" type="Script" id=4]
 [ext_resource path="res://scene/AnimatedSprite.gd" type="Script" id=5]
+
 [ext_resource path="res://assets/Basic/Stand - Basic/[stand -_00001] (imported)-stand -_00006.png.png" type="Texture" id=6]
 [ext_resource path="res://assets/Basic/Land - Basic/[bat_00001] (imported)-land_00001.png.png" type="Texture" id=7]
 [ext_resource path="res://assets/Basic/Jump - Basic/Jump - Basic 1.png" type="Texture" id=8]
@@ -40,6 +41,22 @@
 [ext_resource path="res://assets/Basic/Stand - Basic/[stand -_00001] (imported)-stand -_00007.png.png" type="Texture" id=38]
 [ext_resource path="res://assets/Basic/Jump - Basic/Jump - Basic.png" type="Texture" id=39]
 [ext_resource path="res://assets/Basic/Run - Basic/[run -_00001] (imported)-run -_00001.png.png" type="Texture" id=40]
+>>>>>>> hackathon-2022/game_hackathon/scene/player.tscn
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 57, 92 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 57, 0, 57, 92 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 114, 0, 57, 92 )
 
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
@@ -48,12 +65,14 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
+
 "frames": [ ExtResource( 8 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "jump",
 "speed": 3.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 7 ) ],
+
 "loop": true,
 "name": "land",
 "speed": 5.0
