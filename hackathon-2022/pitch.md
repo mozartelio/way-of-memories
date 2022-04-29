@@ -23,7 +23,7 @@ Dole je uvedená tabuľka s porovnaním úspešnosti podobných hier žánru pla
 
 ## Unique Selling Points (USP)
 
-- atmosféra hry, tvorená kombináciou vizuálnej a audio časti
+- atmosféra hry, tvorená vizuálnou časťou
 - mechanika hry
 - dobrodružstvá
 
