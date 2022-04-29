@@ -69,7 +69,7 @@ func increase_num_of_hearts():
 
 func decrease_num_of_hearts():
 	number_of_hearth = number_of_hearth - 1
-	if number_of_hearth < 0:
+	if number_of_hearth < 1:
 		emit_signal("game_over")
 
 
