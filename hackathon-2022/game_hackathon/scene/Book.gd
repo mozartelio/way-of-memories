@@ -40,7 +40,7 @@ func _on_Area2D_body_entered(body):
 	rtl.margin_bottom = -30
 	rtl.set_use_bbcode(true)
 
-	if index == 8:
+	if index >= 8:
 		return	
 	rtl.append_bbcode("[color=white][shake rate=2 level=5]"+ array[index] +"[/shake][/color]")
 
