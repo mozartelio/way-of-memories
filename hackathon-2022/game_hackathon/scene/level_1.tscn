@@ -956,3 +956,6 @@ position = Vector2( 197, 520 )
 [connection signal="heart_collect" from="hearts/Heart" to="Player" method="_on_Heart_heart_collect"]
 [connection signal="checkpoint_pos" from="CheckPoints/checkPoint2" to="Player" method="_on_checkPoint_checkpoint_pos"]
 [connection signal="checkpoint_pos" from="CheckPoints/checkPoint" to="Player" method="_on_checkPoint_checkpoint_pos"]
+[connection signal="body_entered" from="Shipi/Sprite15/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Shipi/Sprite16/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Shipi/Krutilka/Area2D" to="Player" method="_on_Area2D_body_entered"]
