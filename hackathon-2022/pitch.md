@@ -32,6 +32,9 @@ Dole je uvedená tabuľka s porovnaním úspešnosti podobných hier žánru pla
 ### Vladislav Klimov (21 rokov)
 
 **Vlastnosti**: veselý, dobrý, mladý, má rad počítačové hry a rado trávi na nich čas;
+
 **Obľúbene hry**: Heartbound, Undertale, OneShot.
+
 **Rodina a život**: Narodil sa v Odese (Ukrajina) v roku 2000. Má troch mladších bratov a je najstarší v rodine. Po skončení strednej školy nastúpil do Poľska ako informatik. Má rád temné a jednoduché hry so zaujímavou zápletkou. Takisto má rad Pozeranie anime a čítanie mangy.
+
 **Zariadenia**: telefón, počítač, tablet.
