@@ -45,6 +45,7 @@
 [node name="Player" parent="." instance=ExtResource( 11 )]
 position = Vector2( 114, 540 )
 z_index = 3
+speed = 531
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -4.00001, -85 )
@@ -162,7 +163,7 @@ position = Vector2( -13, 0 )
 polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
 
 [node name="Sprite42" type="Sprite" parent="shipi"]
-position = Vector2( 2178, 98 )
+position = Vector2( 2180, 96 )
 texture = ExtResource( 37 )
 script = ExtResource( 20 )
 
@@ -171,8 +172,9 @@ position = Vector2( -20, 2 )
 collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shipi/Sprite42/Area2D"]
-position = Vector2( -13, 0 )
-polygon = PoolVector2Array( -416, -23, -445, -18, -446, 84, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 492, 22, 478, -34, 353, -126, 263, -30, 112, -63, 56, -145, -67, -176, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
+position = Vector2( -8.62621, 6.06705 )
+scale = Vector2( 0.995516, 0.90379 )
+polygon = PoolVector2Array( -430.303, -38.8, -434.384, 17.9667, -428.623, 99.6333, -402, 113, -326, 96, -316, 69, -302, 33, -187, 57, -157, 112, -59, 145, -49, 162, -11, 167, 79, 152, 121, 60, 310, 41, 325, 113, 451, 102, 506.899, 14.3097, 491.832, -37.6935, 372.296, -147.232, 263, -30, 112, -63, 88.021, -158.297, -45.5781, -197.023, -148, -119, -174, -57, -301, -46, -359, -110, -414, -106 )
 
 [node name="Sprite30" type="Sprite" parent="shipi"]
 position = Vector2( 1189, 763 )
@@ -499,6 +501,8 @@ position = Vector2( -5247, 44 )
 
 [connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
+[connection signal="body_entered" from="shipi/Sprite43/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="shipi/Sprite42/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="shipi/Sprite30/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="shipi/Sprite39/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="shipi/Sprite40/Area2D" to="Player" method="_on_Area2D_body_entered"]
