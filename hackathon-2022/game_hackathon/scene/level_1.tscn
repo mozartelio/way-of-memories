@@ -890,7 +890,6 @@ flip_h = true
 polygon = PoolVector2Array( -33.4355, 918.427, -96.5298, 970.467, -526.658, 927.726, -512.803, 823.006, -40.7944, 839.422 )
 
 [node name="Sprite16" type="Sprite" parent="Shipi"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 56 )
 offset = Vector2( -306, 846.892 )
 flip_h = true
@@ -909,7 +908,6 @@ script = ExtResource( 32 )
 [node name="Sprite39" type="Sprite" parent="Shipi/Krutilka"]
 position = Vector2( 1117.3, 244.72 )
 rotation = -1.36152
-scale = Vector2( 1, 1 )
 texture = ExtResource( 23 )
 
 [node name="Sprite2" type="Sprite" parent="Shipi/Krutilka"]
@@ -935,7 +933,6 @@ scale = Vector2( 1.87491, 1.87491 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shipi/Krutilka/Area2D"]
 position = Vector2( 3.95142, 532.557 )
 rotation = 1.49012e-08
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -49.1545, 26.045, -50.4894, 122.821, -39.8992, 128.413, -42.8966, 144.288, -29.9996, 130.534, -24.7271, 130.838, -21.1875, 139.096, -15.7603, 134.377, -11.9847, 134.141, -15.0524, 167.649, -10.8049, 166.705, -0.186279, 137.445, 4.06116, 145.232, 7.12866, 139.804, 8.30859, 136.265, 16.5675, 155.614, 19.871, 146.647, 20.9624, 133.57, 31.6718, 138.925, 31.1993, 130.106, 35.4515, 124.909, 37.3414, 107.9, 30.8843, 94.9854, 35.369, 57.9717, 33.9548, 26.1519, 28.6515, 9.88841, 3.54919, -1.77884, 1.78137, -43.8517, 1.7301, -72.8344, -1.78064, -100.155, -2.25256, -175.901, -2.50708, -258.511, -6.17786, -262.515, -6.84521, -127.363, -8.94861, -72.8344, -9.94971, -43.4679, -17.3104, -45.2659, -18.7246, 1.75668, -27.5635, 1.75668, -43.3264, 12.8932 )
 
 [node name="Container" type="Container" parent="."]
