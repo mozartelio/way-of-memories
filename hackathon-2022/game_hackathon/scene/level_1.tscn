@@ -31,7 +31,7 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Rocks2/sprite4.png" type="Texture" id=29]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite5.png" type="Texture" id=30]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite24.png" type="Texture" id=31]
-[ext_resource path="res://scene/pendulum_trap.gd" type="Script" id=32]
+[ext_resource path="res://scene/trapD.gd" type="Script" id=32]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite3.png" type="Texture" id=33]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile1_0_12x.png" type="Texture" id=34]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite8.png" type="Texture" id=35]
@@ -495,22 +495,6 @@ texture = ExtResource( 34 )
 position = Vector2( 1766.59, 17.817 )
 texture = ExtResource( 55 )
 
-[node name="Sprite15" type="Sprite" parent="gras_ground"]
-position = Vector2( 1155.18, 340.088 )
-rotation = -3.10852
-scale = Vector2( 0.284676, 0.318604 )
-texture = ExtResource( 56 )
-offset = Vector2( -306, 846.892 )
-flip_h = true
-
-[node name="Sprite16" type="Sprite" parent="gras_ground"]
-position = Vector2( 1306.31, 279.746 )
-rotation = -3.10823
-scale = Vector2( 0.21621, 0.244566 )
-texture = ExtResource( 56 )
-offset = Vector2( -306, 846.892 )
-flip_h = true
-
 [node name="Tile16012x5" type="Sprite" parent="gras_ground"]
 position = Vector2( 2047.61, 18.6401 )
 texture = ExtResource( 53 )
@@ -884,53 +868,94 @@ one_way_collision_margin = 16.2
 [node name="platform" type="CollisionPolygon2D" parent="map_ground_collision"]
 polygon = PoolVector2Array( -81984.5, -171.576, -82337, -174.631, -83218.9, -176.291, -84189.7, -175.693, -85220.5, -175.333, -85956.8, -175.453, -86534.6, -175.573, -87463.5, -175.573, -88533.9, -175.933, -89400.5, -175.813, -91090.3, -177.741, -91410.7, -175.195, -91548.5, -167.842, -91564.5, -134.575, -84051.1, -136.612, -81808.3, -134.575, -81792.3, -160.034 )
 
-[node name="pendulum_trap" type="KinematicBody2D" parent="."]
-position = Vector2( 1046.34, -187.864 )
-rotation = -1.69929
+[node name="Portal" parent="." instance=ExtResource( 48 )]
+position = Vector2( 2770, 481 )
+
+[node name="Shipi" type="Node2D" parent="."]
+position = Vector2( 1370.66, 799.593 )
+rotation = -3.10823
+scale = Vector2( 0.21621, 0.244566 )
+
+[node name="Sprite15" type="Sprite" parent="Shipi"]
+position = Vector2( 689.298, -267.206 )
+rotation = -0.000256304
+scale = Vector2( 1.31666, 1.30273 )
+texture = ExtResource( 56 )
+offset = Vector2( -306, 846.892 )
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Shipi/Sprite15"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shipi/Sprite15/Area2D"]
+polygon = PoolVector2Array( -33.4355, 918.427, -96.5298, 970.467, -526.658, 927.726, -512.803, 823.006, -40.7944, 839.422 )
+
+[node name="Sprite16" type="Sprite" parent="Shipi"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 56 )
+offset = Vector2( -306, 846.892 )
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="Shipi/Sprite16"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shipi/Sprite16/Area2D"]
+polygon = PoolVector2Array( 2.15881, 943.096, 10.5093, 803.52, -571.13, 806.921, -427.301, 957.487, -427.301, 957.487 )
+
+[node name="Krutilka" type="Node2D" parent="Shipi"]
+position = Vector2( 1448.05, 3967.31 )
+rotation = -1.9581
+scale = Vector2( 2.21563, 2.43565 )
 script = ExtResource( 32 )
 
-[node name="Sprite39" type="Sprite" parent="pendulum_trap"]
-position = Vector2( -4.57965, 609.646 )
-scale = Vector2( 0.533359, 0.533359 )
+[node name="Sprite39" type="Sprite" parent="Shipi/Krutilka"]
+position = Vector2( 1117.3, 244.72 )
+rotation = -1.36152
+scale = Vector2( 1, 1 )
 texture = ExtResource( 23 )
 
-[node name="Sprite" type="Sprite" parent="pendulum_trap/Sprite39"]
-position = Vector2( 6.44482, -635.971 )
-rotation = 1.5708
-scale = Vector2( 0.520722, 1 )
-texture = ExtResource( 59 )
-
-[node name="Sprite2" type="Sprite" parent="pendulum_trap/Sprite39"]
-position = Vector2( 4.46436, -205.571 )
+[node name="Sprite2" type="Sprite" parent="Shipi/Krutilka"]
+position = Vector2( 917.139, 197.645 )
+rotation = -1.36152
 scale = Vector2( 0.387867, 0.387867 )
 texture = ExtResource( 66 )
 flip_v = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pendulum_trap"]
+[node name="Sprite" type="Sprite" parent="Shipi/Krutilka"]
+position = Vector2( 496.541, 106.291 )
+rotation = 0.209281
+scale = Vector2( 0.520722, 1 )
+texture = ExtResource( 59 )
+
+[node name="Timer" type="Timer" parent="Shipi/Krutilka"]
+
+[node name="Area2D" type="Area2D" parent="Shipi/Krutilka"]
+position = Vector2( 0.989258, -1.14758 )
+rotation = -1.36152
+scale = Vector2( 1.87491, 1.87491 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shipi/Krutilka/Area2D"]
 position = Vector2( 3.95142, 532.557 )
+rotation = 1.49012e-08
+scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -49.1545, 26.045, -50.4894, 122.821, -39.8992, 128.413, -42.8966, 144.288, -29.9996, 130.534, -24.7271, 130.838, -21.1875, 139.096, -15.7603, 134.377, -11.9847, 134.141, -15.0524, 167.649, -10.8049, 166.705, -0.186279, 137.445, 4.06116, 145.232, 7.12866, 139.804, 8.30859, 136.265, 16.5675, 155.614, 19.871, 146.647, 20.9624, 133.57, 31.6718, 138.925, 31.1993, 130.106, 35.4515, 124.909, 37.3414, 107.9, 30.8843, 94.9854, 35.369, 57.9717, 33.9548, 26.1519, 28.6515, 9.88841, 3.54919, -1.77884, 1.78137, -43.8517, 1.7301, -72.8344, -1.78064, -100.155, -2.25256, -175.901, -2.50708, -258.511, -6.17786, -262.515, -6.84521, -127.363, -8.94861, -72.8344, -9.94971, -43.4679, -17.3104, -45.2659, -18.7246, 1.75668, -27.5635, 1.75668, -43.3264, 12.8932 )
 
-[node name="Timer" type="Timer" parent="pendulum_trap"]
+[node name="Container" type="Container" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="Book" parent="." instance=ExtResource( 73 )]
+[node name="Book" parent="Container" instance=ExtResource( 73 )]
 position = Vector2( 1647.29, 507.93 )
 
-[node name="Book2" parent="." instance=ExtResource( 73 )]
+[node name="Book2" parent="Container" instance=ExtResource( 73 )]
 position = Vector2( 2635, 503 )
 
-[node name="Book3" parent="." instance=ExtResource( 73 )]
+[node name="Book3" parent="Container" instance=ExtResource( 73 )]
 position = Vector2( 2318, 509 )
 
-[node name="Book4" parent="." instance=ExtResource( 73 )]
+[node name="Book4" parent="Container" instance=ExtResource( 73 )]
 position = Vector2( 197, 520 )
-scale = Vector2( 1, 1 )
-
-[node name="Portal" parent="." instance=ExtResource( 48 )]
-position = Vector2( 2770, 481 )
 
 [connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
 [connection signal="heart_collect" from="hearts/Heart" to="Player" method="_on_Heart_heart_collect"]
 [connection signal="checkpoint_pos" from="CheckPoints/checkPoint2" to="Player" method="_on_checkPoint_checkpoint_pos"]
 [connection signal="checkpoint_pos" from="CheckPoints/checkPoint" to="Player" method="_on_checkPoint_checkpoint_pos"]
-[connection signal="timeout" from="pendulum_trap/Timer" to="pendulum_trap" method="_on_Timer_timeout"]
