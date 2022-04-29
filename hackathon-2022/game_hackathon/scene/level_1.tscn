@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scene/level_1.gd" type="Script" id=1]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=2]
@@ -47,6 +47,7 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props1/sprite47.png" type="Texture" id=45]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile3_0_12x.png" type="Texture" id=46]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile8_0_12x.png" type="Texture" id=47]
+[ext_resource path="res://scene/PortalToLevel2.tscn" type="PackedScene" id=48]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile10_0_12x.png" type="Texture" id=49]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile9_0_12x.png" type="Texture" id=50]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Sprite Shapes/Swamp_Ground/tile7_0_12x.png" type="Texture" id=51]
@@ -71,6 +72,7 @@
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite10.png" type="Texture" id=70]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Trees2 + Props/sprite15.png" type="Texture" id=71]
 [ext_resource path="res://assets/Ciconia Studio/2D Environment/Black&White - The Swamp/Sprites/Environment Props/Swamp_Props2/sprite11.png" type="Texture" id=72]
+[ext_resource path="res://scene/Book.tscn" type="PackedScene" id=73]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -266,7 +268,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Heart" parent="hearts" instance=ExtResource( 14 )]
-position = Vector2( 645.559, 523.17 )
+position = Vector2( 657.545, 519.424 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
 
@@ -909,6 +911,22 @@ position = Vector2( 3.95142, 532.557 )
 polygon = PoolVector2Array( -49.1545, 26.045, -50.4894, 122.821, -39.8992, 128.413, -42.8966, 144.288, -29.9996, 130.534, -24.7271, 130.838, -21.1875, 139.096, -15.7603, 134.377, -11.9847, 134.141, -15.0524, 167.649, -10.8049, 166.705, -0.186279, 137.445, 4.06116, 145.232, 7.12866, 139.804, 8.30859, 136.265, 16.5675, 155.614, 19.871, 146.647, 20.9624, 133.57, 31.6718, 138.925, 31.1993, 130.106, 35.4515, 124.909, 37.3414, 107.9, 30.8843, 94.9854, 35.369, 57.9717, 33.9548, 26.1519, 28.6515, 9.88841, 3.54919, -1.77884, 1.78137, -43.8517, 1.7301, -72.8344, -1.78064, -100.155, -2.25256, -175.901, -2.50708, -258.511, -6.17786, -262.515, -6.84521, -127.363, -8.94861, -72.8344, -9.94971, -43.4679, -17.3104, -45.2659, -18.7246, 1.75668, -27.5635, 1.75668, -43.3264, 12.8932 )
 
 [node name="Timer" type="Timer" parent="pendulum_trap"]
+
+[node name="Book" parent="." instance=ExtResource( 73 )]
+position = Vector2( 1647.29, 507.93 )
+
+[node name="Book2" parent="." instance=ExtResource( 73 )]
+position = Vector2( 2635, 503 )
+
+[node name="Book3" parent="." instance=ExtResource( 73 )]
+position = Vector2( 2318, 509 )
+
+[node name="Book4" parent="." instance=ExtResource( 73 )]
+position = Vector2( 197, 520 )
+scale = Vector2( 1, 1 )
+
+[node name="Portal" parent="." instance=ExtResource( 48 )]
+position = Vector2( 2770, 481 )
 
 [connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
