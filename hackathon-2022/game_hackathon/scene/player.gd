@@ -7,6 +7,8 @@ export var speed = 200
 export var jump_speed = 200
 export var gravity = 5
 
+var was_jump = false
+
 var number_of_hearth = 3
 var is_game_on_pause = false
 var last_checkpoint_pos;
@@ -33,6 +35,9 @@ func _physics_process(delta):
 		if position.y > 1000:
 			to_last_checkpoint()
 			decrease_num_of_hearts()
+		
+		if is_on_floor():
+			was_jump = false
 
 func move():
 	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_right"):
@@ -46,8 +51,9 @@ func move():
 
 
 func jump():
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") and was_jump == false:
 		motion.y = -jump_speed
+		was_jump = true
 
 
 func apply_gravity():
