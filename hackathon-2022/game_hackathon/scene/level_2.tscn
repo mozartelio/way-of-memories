@@ -487,17 +487,21 @@ position = Vector2( 902, 524 )
 [node name="PortalToMenu" parent="." instance=ExtResource( 19 )]
 position = Vector2( 8292, 444 )
 
-[node name="Book" parent="." instance=ExtResource( 17 )]
+[node name="Container" type="Container" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Book3" parent="Container" instance=ExtResource( 17 )]
+position = Vector2( 4803, 553 )
+
+[node name="Book4" parent="Container" instance=ExtResource( 17 )]
+position = Vector2( 1090, 548 )
+
+[node name="Book2" parent="Container" instance=ExtResource( 17 )]
+position = Vector2( 6337, 504 )
+
+[node name="Book" parent="Container" instance=ExtResource( 17 )]
 position = Vector2( 7998, 497 )
-
-[node name="Book" parent="Book" instance=ExtResource( 17 )]
-position = Vector2( -1661, 7 )
-
-[node name="Book" parent="Book/Book" instance=ExtResource( 17 )]
-position = Vector2( -1534, 49 )
-
-[node name="Book2" parent="Book/Book" instance=ExtResource( 17 )]
-position = Vector2( -5247, 44 )
 
 [connection signal="game_over" from="Player" to="levelUI" method="_on_Player_game_over"]
 [connection signal="hearth_signal" from="Player" to="levelUI" method="_on_Player_hearth_signal"]
