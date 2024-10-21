@@ -1,5 +1,5 @@
 # Way of Memories
-A 2D single player platform PC game with a post-apocalyptic theme, created in Godot Engine. Its goal on each level is to go through the map and get to its end. To do so, it is necessary to collect useful items and solve problems with bypassing various traps. The game was made as a hackathon project:<a href="https://devpost.com/software/way-of-memories" target="_blank">Devpost link</a>
+A 2D single player platform PC game with a post-apocalyptic theme, created in Godot Engine. Its goal on each level is to go through the map and get to its end. To do so, it is necessary to collect useful items and solve problems with bypassing various traps. The game was made as a hackathon project: <a href="https://devpost.com/software/way-of-memories" target="_blank">Devpost link</a>
 
 <p float="left">
   <img src="/readme_images/main_page.png" width="300"  height ="165"/>
